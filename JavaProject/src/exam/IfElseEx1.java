@@ -15,6 +15,7 @@ public class IfElseEx1 {
 			System.out.println("홀수");
 		
 	
+		sc.close();
 
 	}
 

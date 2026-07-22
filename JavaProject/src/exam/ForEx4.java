@@ -26,6 +26,7 @@ public class ForEx4 {
 		
 		
 		
+		sc.close();
 
 	}
 

@@ -30,6 +30,7 @@ public class MultipleIfElseEx {
 		else if(num3 > num2 && num3 > num1)
 			printBiggestNumber(num3);
 		
+		sc.close();
 	}
 	
 	public static void printBiggestNumber(int number) {

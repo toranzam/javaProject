@@ -25,6 +25,8 @@ public class WhileEx2 {
 		scoreAvg = (float)scoreSum / studentCount;
 		
 		System.out.println("평균 : " + scoreAvg);
+		
+		sc.close();
 	}
 
 }

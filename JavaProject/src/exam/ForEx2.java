@@ -14,7 +14,7 @@ public class ForEx2 {
 		}
 		
 		
-
+		sc.close();
 	}
 
 }

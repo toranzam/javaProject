@@ -21,6 +21,7 @@ public class ForEx3 {
 		System.out.println("2 ~ 4의 합 : 9");
 		
 
+		sc.close();
 	}
 
 }

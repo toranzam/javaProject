@@ -18,7 +18,7 @@ public class TimeCalculation {
 		System.out.println(time + "초는 " + hour + "시간, " + minute + "분, " + second + "초입니다.");
 		
 		
-	
+		sc.close();
 
 	}
 

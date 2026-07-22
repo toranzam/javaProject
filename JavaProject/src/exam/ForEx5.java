@@ -23,6 +23,8 @@ public class ForEx5 {
 		scoreAvg = (float)scoreSum / studentCount;
 		
 		System.out.println("평균 : " + scoreAvg);
+		
+		sc.close();
 	}
 
 }
