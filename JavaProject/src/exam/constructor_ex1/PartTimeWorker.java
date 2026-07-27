@@ -1,0 +1,16 @@
+package exam.constructor_ex1;
+
+import exam.constructor_ex1.PartTime;
+
+public class PartTimeWorker {
+
+	public static void main(String[] args) {
+		PartTime pw = new PartTime("990101-1034567", "홍길동", 60, 6000);
+
+		System.out.println(pw);
+	}
+	
+
+	
+
+}
