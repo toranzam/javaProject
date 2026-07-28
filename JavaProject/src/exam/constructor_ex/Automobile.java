@@ -1,6 +1,5 @@
 package exam.constructor_ex;
 
-import exam.constructor_ex.Car;
 
 public class Automobile extends Car{
 	

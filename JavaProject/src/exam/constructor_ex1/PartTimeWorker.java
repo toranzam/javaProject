@@ -1,7 +1,5 @@
 package exam.constructor_ex1;
 
-import exam.constructor_ex1.PartTime;
-
 public class PartTimeWorker {
 
 	public static void main(String[] args) {

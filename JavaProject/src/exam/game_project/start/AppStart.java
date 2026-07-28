@@ -1,5 +1,7 @@
 package exam.game_project.start;
 
+import java.util.Scanner;
+
 // import를 통해 다른 패키지에 있는 클래스 사용 가능
 import exam.game_project.game.*;
 import exam.game_project.game.GaBaBo;
@@ -8,12 +10,48 @@ import exam.game_project.game.Guess;
 import exam.game_project.info.AppInfo;
 
 public class AppStart {
+	static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] arg) {
+
+		int menuNum;
+
 		// 프로그램 시작과 끝 
+
 		// 게임 웰컴문구
+		System.out.println("*****************************************************");
+		System.out.println("\t**게임에 오신 것을 환영합니다^^");
+		System.out.println("*****************************************************");
+
 		// 메뉴 출력
 		// 1. 게임정보 2.가위바위보게임 3.숫자 알아맞히기 게임 4.종료
+		System.out.println("\t메뉴");
+		System.out.println("-----------------------------------------------------");
+		System.out.println("1. 애플리케이션 정보");
+		System.out.println("2. 가위바위보 게임");
+		System.out.println("3. 숫자 알아맞히기 게임");
+		System.out.println("4. 종료");
+		System.out.println("-----------------------------------------------------");
+
+
+		System.out.print("메뉴 번호 입력 : ");
+		menuNum = sc.nextInt();
+		System.out.println("*****************************************************");
+
+		System.out.println("\t애플리케이션 정보");
+		System.out.println("-----------------------------------------------------");
+		System.out.println("제목 : **게임");
+		System.out.println("제작자 : 홍길동");
+		System.out.println("내용 : 가위바위보 게임/숫자 알아맞히기 게임");
+		System.out.println("*****************************************************");
+
+
+		
+		
+
+
+
+		
 		
 		// 메뉴 선택 
 		

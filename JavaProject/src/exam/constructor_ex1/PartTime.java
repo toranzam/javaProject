@@ -1,7 +1,5 @@
 package exam.constructor_ex1;
 
-import exam.constructor_ex1.*;
-
 public class PartTime extends Worker{
 	
 	int hours;

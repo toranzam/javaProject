@@ -1,7 +1,5 @@
 package exam.constructor_ex;
 
-import exam.constructor_ex.Car;
-
 public class CarAutomobile {
 
 	public static void main(String[] args) {
