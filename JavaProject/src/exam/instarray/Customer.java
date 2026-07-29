@@ -1,5 +1,7 @@
 package exam.instarray;
 
+import static exam.instarray.Course.sc;
+
 public class Customer {
   int id;
   String name;
