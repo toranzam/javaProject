@@ -9,12 +9,15 @@ import exam.game_project.game.Guess;
 
 import exam.game_project.info.AppInfo;
 
+
 public class AppStart {
 	static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] arg) {
 
 		int menuNum;
+		AppInfo appInfo = new AppInfo();
+		GaBaBo gaBaBo = new GaBaBo();
 
 		// 프로그램 시작과 끝 
 
@@ -25,33 +28,42 @@ public class AppStart {
 
 		// 메뉴 출력
 		// 1. 게임정보 2.가위바위보게임 3.숫자 알아맞히기 게임 4.종료
-		System.out.println("\t메뉴");
-		System.out.println("-----------------------------------------------------");
-		System.out.println("1. 애플리케이션 정보");
-		System.out.println("2. 가위바위보 게임");
-		System.out.println("3. 숫자 알아맞히기 게임");
-		System.out.println("4. 종료");
-		System.out.println("-----------------------------------------------------");
+		while (true) {
+			System.out.println("\t메뉴");
+			System.out.println("-----------------------------------------------------");
+			System.out.println("1. 애플리케이션 정보");
+			System.out.println("2. 가위바위보 게임");
+			System.out.println("3. 숫자 알아맞히기 게임");
+			System.out.println("4. 종료");
+			System.out.println("-----------------------------------------------------");
 
+			System.out.print("메뉴 번호 입력 : ");
+			menuNum = sc.nextInt();
+			System.out.println("*****************************************************");
 
-		System.out.print("메뉴 번호 입력 : ");
-		menuNum = sc.nextInt();
-		System.out.println("*****************************************************");
-
-		System.out.println("\t애플리케이션 정보");
-		System.out.println("-----------------------------------------------------");
-		System.out.println("제목 : **게임");
-		System.out.println("제작자 : 홍길동");
-		System.out.println("내용 : 가위바위보 게임/숫자 알아맞히기 게임");
-		System.out.println("*****************************************************");
-
-
+			switch (menuNum) {
+				case 1:
+					appInfo.showAppInfo();
+					break;
+				case 2:
+					gaBaBo.startGame(sc);
+					break;
+				case 3:
+					Guess.startGame(sc);
+					break;
+				case 4:
+					System.out.println("종료합니다!");
+          System.out.println("*****************************************************");
+          sc.close();
+					return;
+				default:
+					System.out.println("메뉴 번호를 잘못 입력했습니다.");
+					System.out.println("1~4 사이의 번호를 입력해주세요.");
+					System.out.println("*****************************************************");
+			}
+		}
 		
-		
 
-
-
-		
 		
 		// 메뉴 선택 
 		

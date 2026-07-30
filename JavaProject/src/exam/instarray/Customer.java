@@ -1,6 +1,6 @@
 package exam.instarray;
 
-import static exam.instarray.Course.sc;
+import java.util.Scanner;
 
 public class Customer {
   int id;
@@ -9,6 +9,8 @@ public class Customer {
   String job;
   String gender;
   int age;
+
+  static Scanner sc = new Scanner(System.in);
 
   public Customer(int id, String name, String phoneNumber, String job, String gender, int age) {
     this.id = id;
@@ -21,7 +23,8 @@ public class Customer {
 
 
   void showCustomerInfo() {
-
+    System.out.println(id + " " + name + " " + phoneNumber + " "
+    + job + " " + gender + " " + age);
   }
   
 
@@ -31,19 +34,25 @@ public class Customer {
     System.out.println("**** 고객 정보 입력 ****");
     for (int i = 0; i < arr.length; i++) {
 
-    System.out.print("\n고객번호 : ");
-    this.subjectName = sc.next();
-    
-    System.out.print("고객명 : ");
-    this.professor = sc.next();
+      System.out.print("\n고객번호 : ");
+      int id = sc.nextInt();
 
-    System.out.print("전화번호 : ");
-    this.year = sc.nextInt();
+      System.out.print("고객명 : ");
+      String name = sc.next();
 
-    System.out.print("직업 : ");
-    this.earnedCredits = sc.nextInt();
+      System.out.print("전화번호 : ");
+      String phoneNumber = sc.next();
 
-      arr[i] = new Customer();
+      System.out.print("직업 : ");
+      String job = sc.next();
+
+      System.out.print("성별 : ");
+      String gender = sc.next();
+
+      System.out.print("나이 : ");
+      int age = sc.nextInt();
+
+      arr[i] = new Customer(id, name, phoneNumber, job, gender, age);
     }    
     
     System.out.println("\n**** 고객 정보 출력 ****");
