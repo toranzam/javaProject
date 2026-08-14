@@ -5,7 +5,7 @@ package datastructure.stack;
 public class Stack {
   private int stackSize; // 스택 크기
   private int top; // 스택 포인터
-  private char[] stackArr; // 스택
+  private char[] stackArr; // 스택 -> char 형만 처리 가능
 
   // 생성자 : 스택 초기화
   // 배열 index는 0부터 시작하므로 top은 -1로 초기값 설정
@@ -92,6 +92,30 @@ public class Stack {
 
   public int getCapacity() {
     return stackSize - (top + 1);
+  }
+
+  public int getStackSize() {
+    return stackSize;
+  }
+
+  public void setStackSize(int stackSize) {
+    this.stackSize = stackSize;
+  }
+
+  public int getTop() {
+    return top;
+  }
+
+  public void setTop(int top) {
+    this.top = top;
+  }
+
+  public char[] getStackArr() {
+    return stackArr;
+  }
+
+  public void setStackArr(char[] stackArr) {
+    this.stackArr = stackArr;
   }
 
 }
