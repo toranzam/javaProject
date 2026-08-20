@@ -1,4 +1,4 @@
-package datastructure.tree.binarysearch;
+package exam.finalalgoex;
 
 import java.util.Comparator;
 
@@ -18,6 +18,10 @@ public class BinarySearchTree<E> {
     this.comparator = comparator;
     this.root = null;
     this.size = 0;
+  }
+
+  protected Node<E> getRoot() {
+    return root;
   }
 
   /*
@@ -214,8 +218,6 @@ public class BinarySearchTree<E> {
         // - 오른쪽 서브트리에서 제일 작은값의 노드로 대채
         Node<E> replacement = getSuccessorAndUnlink(removeNode);
         removeNode.value = replacement.value;
-      } else if (removeNode.left != null) {
-
       } else if (removeNode.left != null) { // 삭제할 노드의 왼쪽 노드만 있는 경우
         if (removeNode == root) {
           removeNode = removeNode.left;
