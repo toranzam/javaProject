@@ -34,14 +34,26 @@ public class QuickSort {
    */
 
   private static void l_pivot_sort(int[] a, int lo, int hi) {
+    // 재귀 호출의 종료 조건 : 피벗 기준으로 왼쪽 오른쪽 부분리스트가 없거나 1개면 재귀호출의 종료
     if (lo >= hi) { // 정렬할 원소가 없거나 1개
       return;
     }
 
     // 두개의 리스트로 분할 후 pivot을 반환
-    int pivot = partition(a, lo, hi);
-    l_pivot_sort(a, lo, pivot - 1);
-    l_pivot_sort(a, pivot + 1, hi);
+    int pivot = partition(a, lo, hi); // pivot 위치 index 반환
+    System.out.println("왼쪽 부분 리스트");
+    for (int k = lo; k < pivot; k++) {
+      System.out.print(a[k] + " ");
+    }
+    System.out.println();
+    l_pivot_sort(a, lo, pivot - 1); // pivot 기준 작은값들의 부분리스트
+
+    System.out.println("오른쪽 부분 리스트");
+    for (int k = pivot + 1; k <= hi; k++) {
+      System.out.print(a[k] + " ");
+    }
+    System.out.println();
+    l_pivot_sort(a, pivot + 1, hi); // pivot 기준 큰값들의 부분리스트
   }
 
   /*
@@ -77,8 +89,8 @@ public class QuickSort {
        * lo를 증가
        */
 
-      while (a[hi] <= pivot && lo < hi) { // height 포인터가 피벗보다 작은값을 찾은게 아니라면 현재 원소는 skip
-        lo--;
+      while (a[lo] <= pivot && lo < hi) { // height 포인터가 피벗보다 작은값을 찾은게 아니라면 현재 원소는 skip
+        lo++;
       }
 
       swap(a, lo, hi);
@@ -87,6 +99,12 @@ public class QuickSort {
      * pivot 으로 설정했던 위치(a[left])의 원소와 lo가리키는 원소를 교환하고 lo지점을 pivot위치로 결정
      */
     swap(a, left, lo);
+
+    System.out.println("pivot : " + a[lo]);
+    for (int k : a) {
+      System.out.print(k + " ");
+    }
+    System.out.println();
 
     return lo;
   }
