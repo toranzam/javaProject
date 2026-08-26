@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <h3>도서정보 등록</h3>
+
+    <form name="book" method="post" action="bookInsert">
+      <table style="border-spacing: 10px 6px">
+        <tr>
+          <td>도서번호</td>
+          <td><input type="text" name="no" /></td>
+        </tr>
+        <tr>
+          <td>도서명</td>
+          <td><input type="text" name="name" /></td>
+        </tr>
+        <tr>
+          <td>저자</td>
+          <td><input type="text" name="author" /></td>
+        </tr>
+        <tr>
+          <td>가격</td>
+          <td><input type="text" name="price" /></td>
+        </tr>
+        <tr>
+          <td>발행일</td>
+          <td>
+            <input type="text" name="year" size="4" />년
+            <input type="text" name="month" size="4" />월
+            <input type="text" name="day" size="4" />일
+          </td>
+        </tr>
+        <tr>
+          <td>재고</td>
+          <td><input type="text" name="stock" /></td>
+        </tr>
+        <tr>
+          <td>출판사번호</td>
+          <td><input type="text" name="pub_no" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="submit" value="등록" />
+            <input type="reset" value="취소" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
