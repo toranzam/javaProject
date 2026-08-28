@@ -13,38 +13,28 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class SecondServlet
  */
-@WebServlet("/SecondServlet")
+@WebServlet("/secondAnnot") // SecondServlet 클래스의 별명(servlet path) -> uri -> url
 public class SecondServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public SecondServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see Servlet#init(ServletConfig)
+	 * 객체 생성 시 1번 호출
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		System.out.println("Second Servlet init 호출");
+		System.out.println("init2");
 	}
 
 	/**
-	 * @see Servlet#destroy()
+	 * 코드 업데이트 또는 서버 종료 시 1번 호출
 	 */
 	public void destroy() {
-		System.out.println("Second Servlet destroy 호출");
+		System.out.println("destory2");
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * 클라이언트 Get method 요청이 있을 때 마다 호출
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Second Servlet doGet 호출");
+		System.out.println("doGet");
 	}
 
 }

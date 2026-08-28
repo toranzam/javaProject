@@ -1,0 +1,41 @@
+package ojdbc;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * 컨트롤러 역할을 하는 서블릿 : 요청을 받아서 처리를 진행할 클래스를 결정하고 반환되는 결과를 view로 전달 응답하도록 관리
+ * 비즈니스로직 처리 기능 호출해서 view로 전달
+ */
+@WebServlet("/memberselect")
+public class MemberSelectServlet extends HttpServlet {
+
+  @Override
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    doProcess(req, resp);
+  }
+
+  @Override
+  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    doProcess(req, resp);
+  }
+
+  private void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    MemberDAO dao = new MemberDAO();
+    ArrayList<MemberVO> memList = dao.memberSelect();
+
+    req.setAttribute("memList", memList);
+
+    RequestDispatcher dispatcher = req.getRequestDispatcher("memberView");
+    dispatcher.forward(req, resp);
+
+  }
+
+}

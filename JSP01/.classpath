@@ -13,11 +13,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/Users/kimminseong/Documents/Developments/apache-tomcat-9.0.121/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="/Users/kimminseong/Documents/Developments/dbWorkSpace9/studyfiles/ojdbc17.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

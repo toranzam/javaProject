@@ -23,16 +23,16 @@
   </servlet-mapping>
 
   <servlet>
-    <servlet-name>second</servlet-name>
+    <servlet-name>mySecond</servlet-name>
     <servlet-class>servlet01.SecondServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>second</servlet-name>
+    <servlet-name>mySecond</servlet-name>
     <url-pattern>/second</url-pattern>
   </servlet-mapping>
 
-    <servlet>
+  <servlet>
     <servlet-name>myThird</servlet-name>
     <servlet-class>servlet01.ThirdServlet</servlet-class>
   </servlet>
@@ -40,6 +40,17 @@
   <servlet-mapping>
     <servlet-name>myThird</servlet-name>
     <url-pattern>/third</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>joinServlet</servlet-name>
+    <servlet-class>exam.JoinServlet</servlet-class>
+  </servlet>
+
+    <servlet-mapping>
+    <servlet-name>joinServlet</servlet-name>
+    <url-pattern>/join</url-pattern>
   </servlet-mapping>
 </web-app>
 

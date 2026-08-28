@@ -18,12 +18,13 @@ public class BookServlet extends HttpServlet {
 
 	@Override
 	public void init() throws ServletException {
-		System.out.println("init 메서드 호출");
+		System.out.println("객체 생성");
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * form method post 요청 처리
+	 * 1개의 파라미터 value를 추출할 때 사용 : getParameter (input type text, password...)
+	 * 동일 파라미터명으로 여러개의 파라미터가 전송되면 getParameter는 처음 보이는 파라미터의 값만 반환
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding(StandardCharsets.UTF_8.name());
