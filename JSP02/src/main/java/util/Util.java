@@ -7,7 +7,7 @@ public class Util {
 	private static Connection getConnection() {
 		Connection con = null;
 
-		try {
+		try { // 필요하다고 요청되면 그때 dbms와의 연결을 진행하고 객체를 반환 
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
 			String url = "jdbc:oracle:thin:@localhost:1521/freepdb1";
