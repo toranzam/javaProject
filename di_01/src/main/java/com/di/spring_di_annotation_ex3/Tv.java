@@ -6,14 +6,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Tv {
 	
-	
-	private Speaker speaker;
-	
 	@Autowired
-	public Tv(Speaker speaker) {
-		super();
-		this.speaker = speaker;
-	}
+	private Speaker speaker;
 
 	public void volumeUp() {
 		speaker.volumeUp();
