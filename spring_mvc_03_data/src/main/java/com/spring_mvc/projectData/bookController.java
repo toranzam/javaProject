@@ -9,19 +9,19 @@ import org.springframework.web.servlet.ModelAndView;
 public class bookController {
 
 	@RequestMapping("/bookInfoView1")
-	public String showBookInfo(Model model) {
+	public String showBookInfo(Model model) { // DI 
 		model.addAttribute("title", "스프링 프레임워크");
 		model.addAttribute("price", 20000);
 	
-		return "bookInfoView";
+		return "book/bookInfoView";
 	}
 
  
 	@RequestMapping("/bookInfoView2")
-	public ModelAndView showBookInfo(ModelAndView mv) {
+	public ModelAndView showBookInfo(ModelAndView mv) { // DI
 		mv.addObject("title", "스프링 프레임워크2");
 		mv.addObject("price", 20000);
-		mv.setViewName("bookInfoView"); 
+		mv.setViewName("book/bookInfoView"); 
 		return mv;
 	}
 }
