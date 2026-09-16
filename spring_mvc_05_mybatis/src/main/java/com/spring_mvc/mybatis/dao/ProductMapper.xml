@@ -29,35 +29,65 @@
 		ORDER BY prdNo
 	</select>
 
-	<!-- 
-		상품 등록 : void insertProduct(ProductDTO prdDto)
-	 	매개변수의 타입을 parameterType에 value로 설정
-	 	쿼리에 결정되지 않은 값이 매핑되어야 할 때는 place holder를 사용 
-	 	#{} 또는 ${} 중 하나를 사용함 
-	 	${}는 statement 객체의 변수 역할을 함, 재사용이 가능한 #{}를 더 많이 사용
-	-->
- 	<insert id="insertProduct" parameterType="com.spring_mvc.mybatis.dto.ProductDTO">
- 		INSERT INTO product(prdNo, prdName, prdPrice, prdCompany, prdStock, prdDate)
- 		VALUES (#{prdNo}, #{prdName}, ${prdPrice}, #{prdCompany}, #{prdStock}, #{prdDate})
+	<!-- 상품 등록 : void insertProduct(ProductDTO prdDto) 매개변수의 타입을 parameterType에 
+		value로 설정 쿼리에 결정되지 않은 값이 매핑되어야 할 때는 place holder를 사용 #{} 또는 ${} 중 하나를 사용함 
+		${}는 statement 객체의 변수 역할을 함, 재사용이 가능한 #{}를 더 많이 사용 -->
+	<insert id="insertProduct"
+		parameterType="com.spring_mvc.mybatis.dto.ProductDTO">
+		INSERT INTO product(prdNo, prdName, prdPrice,
+		prdCompany, prdStock, prdDate)
+		VALUES (#{prdNo}, #{prdName},
+		${prdPrice}, #{prdCompany}, #{prdStock},
+		#{prdDate})
 	</insert>
-	
-	<!-- 
-		상품상세정보 조회 : 조건절이 있는 select
-		파라미터와 result가 모두 있는 태그로 구성해야 함 
-	-->
-	<select id="detailViewProduct" parameterType="string" resultType="com.spring_mvc.mybatis.dto.ProductDTO">
+
+	<!-- 상품상세정보 조회 : 조건절이 있는 select 파라미터와 result가 모두 있는 태그로 구성해야 함 -->
+	<select id="detailViewProduct" parameterType="string"
+		resultType="com.spring_mvc.mybatis.dto.ProductDTO">
 		SELECT * FROM product WHERE prdNo= #{prdNo}
 	</select>
-	
+
 	<!-- 상품정보 수정 : 상품번호는 수정하지 않는다 기본키 -->
-	<update id="updateProduct" parameterType="com.spring_mvc.mybatis.dto.ProductDTO">
-		UPDATE product SET prdName= #{prdName}, prdPrice= #{prdPrice}, prdCompany= #{prdCompany}, prdStock= #{prdStock},  prdDate= #{prdDate} 
+	<update id="updateProduct"
+		parameterType="com.spring_mvc.mybatis.dto.ProductDTO">
+		UPDATE product SET prdName= #{prdName}, prdPrice=
+		#{prdPrice}, prdCompany= #{prdCompany}, prdStock= #{prdStock},
+		prdDate= #{prdDate}
 		WHERE prdNo= #{prdNo}
 	</update>
-	
+
 	<!-- 상품정보 삭제 -->
 	<delete id="deleteProduct" parameterType="string">
-		DELETE FROM product WHERE prdNo=#{prdNo}
+		DELETE FROM product
+		WHERE prdNo=#{prdNo}
 	</delete>
+
+
+	<!-- 
+		상품번호 중복 확인
+		상품번호가 중복되면 상품번호값이 반환
+		중복되지 않으면 null이 반환됨 
+	-->
+	<select id="prdNoCheck" resultType="string"
+		parameterType="string">
+		SELECT prdNo FROM product WHERE prdNo= #{prdNo}
+	</select>
+	
+	<!-- 
+		상품검색
+		조건절 구성이 상품명검색이거나 제조사 검색
+		<CHOOSE><WHEN> : IF ~ ELSE
+	-->
+	<select id="productSearch" parameterType="hashmap" resultMap="prdResult">
+		SELECT * FROM product WHERE 
+			<choose>
+				<when test="type != null and type.equals('prdName')">
+					prdName LIKE '%' || #{keyword} || '%'
+				</when>
+				<when test="type != null and type.equals('prdCompany')">
+					prdCompany LIKE '%' || #{keyword} || '%'
+				</when>
+			</choose>
+	</select>
 
 </mapper>

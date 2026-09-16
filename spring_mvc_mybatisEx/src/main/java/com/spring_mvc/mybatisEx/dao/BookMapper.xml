@@ -39,5 +39,9 @@
 		DELETE FROM book WHERER bookNo=#{bookNo}"
 	</delete>
 	
+	<select id="bookNoCheck" resultType="string" parameterType="string">
+		SELECT bookNo FROM book WHERE bookNo= #{bookNo}
+	</select>
+	
 	
 </mapper>

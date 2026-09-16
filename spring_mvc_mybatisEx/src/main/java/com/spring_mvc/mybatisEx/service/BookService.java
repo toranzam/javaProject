@@ -15,23 +15,32 @@ public class BookService implements IBookService {
 	@Qualifier("IBookDAO")
 	IBookDAO dao;
 
+	@Override
+	public String bookNoCheck(String bookNo) {
+		String res = dao.bookNoCheck(bookNo);
+		String result = "available";
+		if (res != null) {
+			result = "no_available";
+		}
+		return result;
+	}
 
 	@Override
 	public void insertBook(BookDTO bookDto) {
 		dao.insertBook(bookDto);
-		
+
 	}
 
 	@Override
 	public void updateBook(BookDTO bookDto) {
 		dao.updateBook(bookDto);
-		
+
 	}
 
 	@Override
 	public void deleteBook(String bookNo) {
 		dao.deleteBook(bookNo);
-		
+
 	}
 
 	@Override
@@ -41,11 +50,7 @@ public class BookService implements IBookService {
 
 	@Override
 	public BookDTO detailViewBook(String bookNo) {
-	
 		return dao.detailViewBook(bookNo);
 	}
-	
-	
-	
 
 }

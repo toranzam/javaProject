@@ -14,4 +14,6 @@ public interface IBookService {
 	ArrayList<BookDTO> listAllBook();
 
 	BookDTO detailViewBook(String bookNo);
+	
+	String bookNoCheck(String bookNo);
 }

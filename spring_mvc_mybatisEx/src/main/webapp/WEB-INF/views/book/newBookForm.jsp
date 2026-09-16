@@ -6,12 +6,17 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>bookForm</title>
+		<script type="text/javascript" src="<c:url value='/js/jquery-3.7.1.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='/js/bookNoCheck1.js'/>"></script>
+		<!-- axios 기능을 활용하려면 lib 필요 -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	</head>
 	<body>
 		<h3>상품 정보 등록</h3>
 		<form method="post" action="<c:url value='/book/insertBook'/>">
 			<table>
 				<tr><td>책 번호</td><td><input type="text" name="bookNo" id="bookNo">
+				<button type="button" id="bookNoCheckBtn">중복확인</button>
 				</td></tr>
 				<tr><td>이름</td><td><input type="text" name="bookName"></td></tr>
 				<tr><td>저자 </td><td> <input type="text" name="bookAuthor"></td></tr>

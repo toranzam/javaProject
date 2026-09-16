@@ -1,0 +1,37 @@
+$(document).ready(function() {
+    $('#prdNoCheckBtn').on('click', function(event) {
+
+        event.preventDefault();
+
+        let prdNo = $('#prdNo').val();
+
+        if (prdNo == "") {
+            alert("상품번호를 입력하세요");
+            return
+        } else {
+            // 서버로 상품번호 전달 중복확인
+            $.ajax({
+                type: "GET",
+                url: "/mybatis/product/prdNoCheck1/" + prdNo, // uri data 전송
+                // url: "/mybatis/product/prdNoCheck1/?prdNo=" + prdNo, // 쿼리스트링 방식의 전송 
+                dataType: "text",
+                success: function(result) {
+                    console.log(result);
+                    if (result == "available") {
+                        alert("사용가능한 번호입니다1")
+                    } else {
+                        alert("사용 불가능한 번호입니다1")
+                    }
+                },
+                error: function() {
+                    alert("전송실패")
+                },
+            }); // ajax 끝
+
+        } // else 끝
+
+
+
+
+    }); // on 끝 
+}); // ready 끝
