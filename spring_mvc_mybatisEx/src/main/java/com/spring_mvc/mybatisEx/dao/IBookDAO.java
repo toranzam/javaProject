@@ -1,6 +1,7 @@
 package com.spring_mvc.mybatisEx.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.spring_mvc.mybatisEx.dto.BookDTO;
 
@@ -16,4 +17,6 @@ public interface IBookDAO {
 	BookDTO detailViewBook(String bookNo);
 	
 	String bookNoCheck(String bookNo);
+	
+	ArrayList<BookDTO> bookSearch(HashMap<String, Object> map);
 }

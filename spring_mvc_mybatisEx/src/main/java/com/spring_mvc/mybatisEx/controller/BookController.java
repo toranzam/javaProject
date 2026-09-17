@@ -1,6 +1,8 @@
+
 package com.spring_mvc.mybatisEx.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -76,7 +78,7 @@ public class BookController {
 		String res = service.bookNoCheck(bookNo);
 		return res;
 	}
-	
+
 	@ResponseBody
 	@RequestMapping("/book/bookNoCheck2")
 	public String prdCheck2(@RequestParam("bookNo") String bookNo) {
@@ -90,4 +92,43 @@ public class BookController {
 		String res = service.bookNoCheck(bookNo);
 		return res;
 	}
+
+	@GetMapping("/book/bookSearchForm1")
+	public String viewBookSearchForm1() {
+		return "book/bookSearchForm1";
+	}
+
+	@ResponseBody
+	@PostMapping("/book/bookSearch1")
+	public ArrayList<BookDTO> bookSearch1(@RequestParam HashMap<String, Object> map) {
+		ArrayList<BookDTO> bookList = service.bookSearch(map);
+		return bookList;
+	}
+
+	@GetMapping("/book/bookSearchForm2")
+	public String viewBookSearchForm2() {
+		return "book/bookSearchForm2";
+	}
+
+	@PostMapping("/book/bookSearch2")
+	public String bookSearch2(@RequestParam HashMap<String, Object> map, Model model) {
+		ArrayList<BookDTO> bookList = service.bookSearch(map);
+		model.addAttribute("bookList", bookList);
+		return "book/bookSearchResultView";
+	}
+
+	@GetMapping("/book/bookSearchForm3")
+	public String viewBookSearchForm3() {
+		return "book/bookSearchForm3";
+	}
+
+	@ResponseBody
+	@PostMapping("/book/bookSearch3")
+	public ArrayList<BookDTO> bookSearch3(@RequestParam HashMap<String, Object> map) {
+		ArrayList<BookDTO> bookList = service.bookSearch(map);
+		return bookList;
+	}
+
+	
+
 }

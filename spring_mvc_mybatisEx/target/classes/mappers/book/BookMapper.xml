@@ -43,5 +43,19 @@
 		SELECT bookNo FROM book WHERE bookNo= #{bookNo}
 	</select>
 	
+	<select id="bookSearch" parameterType="hashmap" resultMap="bookResult">
+		SELECT bookNo, bookName, bookAuthor, bookPrice, bookDate, bookStock, pubNo
+		FROM book
+		WHERE
+			<choose>
+				<when test="type != null and type.equals('bookName')">
+					bookName LIKE '%' || #{keyword} || '%'
+				</when>
+					<when test="type != null and type.equals('bookAuthor')">
+					bookAuthor LIKE '%' || #{keyword} || '%'
+				</when>
+			</choose>
+	</select>
+	
 	
 </mapper>

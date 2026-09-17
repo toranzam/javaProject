@@ -13,5 +13,8 @@
 	<h4>도서 관리 시스템</h4>
 	<a href="<c:url value='/book/listAllBook'/>">전체 도서 조회</a>
 	<a href="<c:url value='/book/newBookForm'/>">도서 정보 등록 </a>
+	<a href="<c:url value='/book/bookSearchForm1'/>">도서검색1 </a>
+	<a href="<c:url value='/book/bookSearchForm2'/>">도서검색2 </a>
+	<a href="<c:url value='/book/bookSearchForm3'/>">도서검색3 </a>
 </body>
 </html>

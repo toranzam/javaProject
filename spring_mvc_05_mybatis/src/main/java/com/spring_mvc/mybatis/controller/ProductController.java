@@ -131,7 +131,7 @@ public class ProductController {
 
 	// 상품 검색 폼 요청
 	@RequestMapping("/product/productSearchForm1")
-	public String viewproductSearchForm1() {
+	public String viewProductSearchForm1() {
 		return "product/productSearchForm1";
 	}
 
@@ -146,6 +146,29 @@ public class ProductController {
 		 */
 		ArrayList<ProductDTO> prdList = service.productSearch(map);
 		return prdList;
+	}
+	
+	// 상품 검색 폼 요청
+	@RequestMapping("/product/productSearchForm2")
+	public String viewProductSearchForm2() {
+		return "product/productSearchForm2";
+	}
 
+	// 상품 검색 메소드 2 - view 페이지 반환
+	@RequestMapping("/product/productSearch2")
+	public String productSearch2(@RequestParam HashMap<String, Object> map, Model model) {
+		/*
+		 * public ArrayList<ProductDTO> productSearch1(@RequestParam String
+		 * type, @RequestParam String keyword) {
+		 */
+		ArrayList<ProductDTO> prdList = service.productSearch(map);
+		model.addAttribute("prdList", prdList);
+		return "product/productSearchResultView";
+	}
+	
+	// 상품 검색 폼 요청
+	@RequestMapping("/product/productSearchForm3")
+	public String viewProductSearchForm3() {
+		return "product/productSearchForm3";
 	}
 }
