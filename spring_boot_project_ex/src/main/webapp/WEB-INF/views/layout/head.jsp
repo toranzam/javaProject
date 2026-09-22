@@ -15,4 +15,4 @@
 		<script src="<c:url value='/js/slideShow.js'/>" ></script>
 		<script src="<c:url value='/js/tabMenu.js'/>" ></script>
 		<script src="<c:url value='/js/index.js'/>" ></script>
-		<script src="<c:url value='/js/idCheck.js'/>" ></script>
+		
