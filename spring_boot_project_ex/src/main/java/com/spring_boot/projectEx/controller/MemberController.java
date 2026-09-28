@@ -40,6 +40,12 @@ public class MemberController {
 		return result;
 	}
 
+	@GetMapping("/member/logout")
+	public String userLogout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
+
 	// 회원가입 폼 요청
 	@GetMapping("/member/joinForm")
 	public String joinForm() {
@@ -59,34 +65,29 @@ public class MemberController {
 		}
 		return result;
 	}
-	
-	// 회원가입 
+
+	// 회원가입
 	@PostMapping("/member/join")
-	public String join(MemberDTO dto, 
-			@RequestParam("memHp1") String memHp1,
-			@RequestParam("memHp2") String memHp2,
-			@RequestParam("memHp3") String memHp3
-			) {
+	public String join(MemberDTO dto, @RequestParam("memHp1") String memHp1, @RequestParam("memHp2") String memHp2,
+			@RequestParam("memHp3") String memHp3) {
 		String memHp = memHp1 + "_" + memHp2 + "_" + memHp3;
 		dto.setMemHp(memHp);
-		memService.insertMember(dto); // 회원가입 완료 후 
+		memService.insertMember(dto); // 회원가입 완료 후
 		return "redirect:/member/loginForm"; // 로그인 폼 요청
 	}
-	
-	@GetMapping("/member/updateForm") 
+
+	@GetMapping("/member/updateForm")
 	public String updateForm() {
 		return "member/updateForm";
 	}
-	
-	@PostMapping("/member/update") 
-	public void update(MemberDTO dto, 
-			@RequestParam("memHp1") String memHp1,
-			@RequestParam("memHp2") String memHp2,
+
+	@PostMapping("/member/update")
+	public void update(MemberDTO dto, @RequestParam("memHp1") String memHp1, @RequestParam("memHp2") String memHp2,
 			@RequestParam("memHp3") String memHp3) {
 		String memHp = memHp1 + "_" + memHp2 + "_" + memHp3;
 		dto.setMemHp(memHp);
 		memService.updateMember(dto);
-		
+
 	}
 
 }
