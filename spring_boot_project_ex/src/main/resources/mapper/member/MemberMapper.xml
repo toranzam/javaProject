@@ -33,7 +33,20 @@
 		memName=#{memName}, memEmail=#{memEmail},
 		memHp=#{memHp}, memZipcode=#{memZipcode},
 		memAddress1=#{memAddress1}, memAddress2=#{memAddress2} 
+		WHERE memId = #{memId}
   </update>
+  
+  <!-- public MemberDTO memberInfo(String memId) -->
+  <select id="memberInfo" parameterType="string" resultType="com.spring_boot.projectEx.dto.MemberDTO">
+  	SELECT * 
+  	FROM member
+  	WHERE memId = #{memId}
+  </select>
+  
+  <!-- public void deleteMember(String memId) -->
+  <delete id="deleteMember" parameterType="memId">
+  	DELETE FROM member WHERE memId = #{memId}
+  </delete>
   
   
   </mapper>

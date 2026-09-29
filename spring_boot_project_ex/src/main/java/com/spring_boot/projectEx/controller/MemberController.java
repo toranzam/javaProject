@@ -5,6 +5,7 @@ import java.util.HashMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,7 +35,7 @@ public class MemberController {
 	public String loginCheck(@RequestParam HashMap<String, Object> param, HttpSession session) {
 		String result = memService.loginCheck(param);
 		// 로그인 성공시 session 속성 추가 -> 로그인 유지
-		if (result == "success") {
+		if (result.equals("success")) {
 			session.setAttribute("sid", param.get("id"));
 		}
 		return result;
@@ -70,24 +71,51 @@ public class MemberController {
 	@PostMapping("/member/join")
 	public String join(MemberDTO dto, @RequestParam("memHp1") String memHp1, @RequestParam("memHp2") String memHp2,
 			@RequestParam("memHp3") String memHp3) {
-		String memHp = memHp1 + "_" + memHp2 + "_" + memHp3;
+		String memHp = memHp1 + "-" + memHp2 + "-" + memHp3;
 		dto.setMemHp(memHp);
 		memService.insertMember(dto); // 회원가입 완료 후
 		return "redirect:/member/loginForm"; // 로그인 폼 요청
 	}
 
 	@GetMapping("/member/updateForm")
-	public String updateForm() {
+	public String updateForm(HttpSession session, Model model) {
+
+		if (session.getAttribute("sid") == null) {
+			return "redirect:/member/loginForm";
+		}
+		String memid = (String) session.getAttribute("sid");
+
+		MemberDTO member = memService.memberInfo(memid);
+
+		model.addAttribute("member", member);
+
 		return "member/updateForm";
 	}
 
 	@PostMapping("/member/update")
-	public void update(MemberDTO dto, @RequestParam("memHp1") String memHp1, @RequestParam("memHp2") String memHp2,
+	public String update(MemberDTO dto, @RequestParam("memHp1") String memHp1, @RequestParam("memHp2") String memHp2,
 			@RequestParam("memHp3") String memHp3) {
-		String memHp = memHp1 + "_" + memHp2 + "_" + memHp3;
+		String memHp = memHp1 + "-" + memHp2 + "-" + memHp3;
 		dto.setMemHp(memHp);
 		memService.updateMember(dto);
-
+		return "redirect:/member/myPage";
 	}
+
+	@GetMapping("/member/myPage")
+	public String myPage(HttpSession session, Model model) {
+
+		if (session.getAttribute("sid") == null) {
+			return "redirect:/member/loginForm";
+		}
+		String memid = (String) session.getAttribute("sid");
+
+		MemberDTO member = memService.memberInfo(memid);
+
+		model.addAttribute("member", member);
+
+		return "member/myPage";
+	}
+	
+
 
 }

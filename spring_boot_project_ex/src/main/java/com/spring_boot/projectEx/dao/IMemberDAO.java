@@ -10,6 +10,8 @@ public interface IMemberDAO {
 	public void insertMember(MemberDTO dto);
 	public String idCheck(String id);
 	public void updateMember(MemberDTO dto);
+	public MemberDTO memberInfo(String memId);
+	public void deleteMember(String memId);
 	
 
 }

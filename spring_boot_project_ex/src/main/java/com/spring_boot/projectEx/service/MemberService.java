@@ -19,11 +19,11 @@ public class MemberService implements IMemberService {
 	IMemberDAO dao;
 
 	@Autowired
-	PasswordEncoder pwdEncoder; // BCrypt 해시 encoder가 주입되도록 config 클래스에서 Bean 생성했음s
+	PasswordEncoder pwdEncoder; // BCrypt 해시 encoder가 주입되도록 config 클래스에서 Bean 생성했음
 
 	@Override
 	public String loginCheck(HashMap<String, Object> map) {
-		String encodedPwd = dao.loginCheck((String) map.get("id")); // 해당 id의 회원이 있으면 암호화도니 비밀번호 반환
+		String encodedPwd = dao.loginCheck((String) map.get("id")); // 해당 id의 회원이 있으면 암호화된 비밀번호 반환
 		String result = "fail";
 		if (encodedPwd != null &&pwdEncoder.matches((String) map.get("pwd"), encodedPwd)) {
 			result = "success";
@@ -50,6 +50,20 @@ public class MemberService implements IMemberService {
 		dto.setMemPwd(encodedPwd);
 		dao.updateMember(dto);
 	}
+
+	@Override
+	public MemberDTO memberInfo(String memId) {
+		return dao.memberInfo(memId);
+	}
+
+	@Override
+	public void deleteMember(String memId) {
+		dao.deleteMember(memId);
+	}
+	
+	
+	
+	
 	
 	
 
