@@ -27,9 +27,8 @@
 			</div>
 
 			<div class="login-actions">
-				<button class="login-button" type="submit">로그인</button>
-				<a class="login-link" href="/join">회원가입</a> <a class="login-link">아이디
-					/ 비밀번호 찾기</a>
+				<button class="login-button" type="submit">회원가입</button>
+				 
 			</div>
 		</form>
 	</main>
