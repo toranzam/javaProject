@@ -65,7 +65,7 @@
   background-color: #111111;
   color: #ffffff;
   font-size: 16px;
-  font-weight: 600px;
+  font-weight: 400;
   border-radius: 6px;
   border: none;
 }
@@ -83,4 +83,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.join-postal-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.join-postal-row .login-input {
+  flex: 1;
+  width: auto;
+  min-width: 0;
+}
+
+.join-address-button {
+  flex-shrink: 0;
+  height: 46px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #111111;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.join-address-button:focus-visible {
+  outline: 2px solid #111111;
+  outline-offset: 3px;
 }

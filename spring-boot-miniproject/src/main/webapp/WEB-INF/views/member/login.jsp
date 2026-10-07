@@ -12,21 +12,22 @@
 <body>
 
 	<main class="login-page">
-		<form class="login-form" action="/member/login" method="post">
+		<form class="login-form" action="<c:url value='/login'/>" method="post">
 			<div class="login-heading">
 				<h1 class="login-logo">PC PICK</h1>
-				<p class="login-description">가입하실 때 사용한 이메일과 비밀번호를 입력해주세요.</p>
+				<p class="login-description">가입하실 때 사용한 아이디와 비밀번호를 입력해주세요.</p>
 			</div>
 
 			<div class="login-fields">
-				<input class="login-input" placeholder="이메일" /> <input
-					class="login-input" placeholder="비밀번호" />
+				<input class="login-input" placeholder="아이디" type="text"
+					name="loginId" /> <input class="login-input" placeholder="비밀번호"
+					type="password" name="password" />
 			</div>
 
 			<div class="login-actions">
 				<button class="login-button" type="submit">로그인</button>
-				<a class="login-link" href="/join">회원가입</a> <a
-					class="login-link">아이디 / 비밀번호 찾기</a>
+				<a class="login-link" href="/join">회원가입</a> <a class="login-link">아이디
+					/ 비밀번호 찾기</a>
 			</div>
 		</form>
 	</main>
