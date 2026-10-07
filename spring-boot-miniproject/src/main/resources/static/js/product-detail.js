@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+(() => {
   const purchase = document.querySelector(".product-purchase-controls");
 
   if (purchase) {
@@ -89,4 +89,4 @@ document.addEventListener("DOMContentLoaded", () => {
       if (expanded) toggle.scrollIntoView({ block: "nearest" });
     });
   }
-});
+})();
