@@ -321,11 +321,310 @@
 							</div>
 						</div>
 					</div>
-					
-
-
 				</div>
 				<a class="popular-products-more" href="#"> 인기상품 더보기 &gt; </a>
+			</section>
+
+			<section class="pick-deals">
+				<div class="pick-deals-heading">
+					<h2 class="pick-deals-title">PICK 딜</h2>
+					<p class="pick-deals-description">매주 새로운 브랜드와 함께하는 PICK 딜</p>
+				</div>
+
+				<div class="pick-deals-list">
+					<div class="product-card">
+						<a class="product-image-link"> <img class="product-image"
+							src="<c:url value='/img/card.jpg'/>">
+						</a>
+
+						<div class="product-info">
+							<div class="product-heading">
+								<a class="product-brand">ASUS &gt;</a> <a class="product-name">[ASUS]
+									PRIME 지포스 RTX 5080 OC D7 16GB 대원씨티에스</a>
+							</div>
+
+							<div class="product-pricing">
+								<span class="product-discount">24%</span> <span
+									class="product-price">1,200,000</span> <span
+									class="product-original-price">1,500,000</span>
+							</div>
+						</div>
+					</div>
+					<div class="product-card">
+						<a class="product-image-link"> <img class="product-image"
+							src="<c:url value='/img/card.jpg'/>">
+						</a>
+
+						<div class="product-info">
+							<div class="product-heading">
+								<a class="product-brand">ASUS &gt;</a> <a class="product-name">[ASUS]
+									PRIME 지포스 RTX 5080 OC D7 16GB 대원씨티에스</a>
+							</div>
+
+							<div class="product-pricing">
+								<span class="product-discount">24%</span> <span
+									class="product-price">1,200,000</span> <span
+									class="product-original-price">1,500,000</span>
+							</div>
+						</div>
+					</div>
+					<div class="product-card">
+						<a class="product-image-link"> <img class="product-image"
+							src="<c:url value='/img/card.jpg'/>">
+						</a>
+
+						<div class="product-info">
+							<div class="product-heading">
+								<a class="product-brand">ASUS &gt;</a> <a class="product-name">[ASUS]
+									PRIME 지포스 RTX 5080 OC D7 16GB 대원씨티에스</a>
+							</div>
+
+							<div class="product-pricing">
+								<span class="product-discount">24%</span> <span
+									class="product-price">1,200,000</span> <span
+									class="product-original-price">1,500,000</span>
+							</div>
+						</div>
+					</div>
+					<div class="product-card">
+						<a class="product-image-link"> <img class="product-image"
+							src="<c:url value='/img/card.jpg'/>">
+						</a>
+
+						<div class="product-info">
+							<div class="product-heading">
+								<a class="product-brand">ASUS &gt;</a> <a class="product-name">[ASUS]
+									PRIME 지포스 RTX 5080 OC D7 16GB 대원씨티에스</a>
+							</div>
+
+							<div class="product-pricing">
+								<span class="product-discount">24%</span> <span
+									class="product-price">1,200,000</span> <span
+									class="product-original-price">1,500,000</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="brand-banner"> <img src="<c:url value='/img/banner1.png'/>"></section>
+
+			<section class="pick-events">
+				<div class="pick-events-heading">
+					<h2 class="pick-events-title">PICK 기획전</h2>
+					<p class="pick-events-description">오직 PC PICK에서만 PICK 기획전</p>
+				</div>
+
+				<div class="product-list">
+					<div class="product-card">
+						<a class="product-image-link"> <img class="product-image"
+							src="<c:url value='/img/card.jpg'/>" alt="ASUS 그래픽카드">
+						</a>
+
+						<div class="product-info">
+							<div class="product-heading">
+								<a class="product-brand">ASUS &gt;</a> <a class="product-name">[ASUS]
+									PRIME 지포스 RTX 5080 OC D7 16GB 대원씨티에스</a>
+							</div>
+
+							<div class="product-pricing">
+								<span class="product-discount">24%</span> <span
+									class="product-price">1,200,000원</span> <span
+									class="product-original-price">1,500,000원</span>
+							</div>
+						</div>
+					</div>
+					<div class="product-card">
+						<a class="product-image-link"> <img class="product-image"
+							src="<c:url value='/img/card.jpg'/>" alt="ASUS 그래픽카드">
+						</a>
+
+						<div class="product-info">
+							<div class="product-heading">
+								<a class="product-brand">ASUS &gt;</a> <a class="product-name">[ASUS]
+									PRIME 지포스 RTX 5080 OC D7 16GB 대원씨티에스</a>
+							</div>
+
+							<div class="product-pricing">
+								<span class="product-discount">24%</span> <span
+									class="product-price">1,200,000원</span> <span
+									class="product-original-price">1,500,000원</span>
+							</div>
+						</div>
+					</div>
+					<div class="product-card">
+						<a class="product-image-link"> <img class="product-image"
+							src="<c:url value='/img/card.jpg'/>" alt="ASUS 그래픽카드">
+						</a>
+
+						<div class="product-info">
+							<div class="product-heading">
+								<a class="product-brand">ASUS &gt;</a> <a class="product-name">[ASUS]
+									PRIME 지포스 RTX 5080 OC D7 16GB 대원씨티에스</a>
+							</div>
+
+							<div class="product-pricing">
+								<span class="product-discount">24%</span> <span
+									class="product-price">1,200,000원</span> <span
+									class="product-original-price">1,500,000원</span>
+							</div>
+						</div>
+					</div>
+					<div class="product-card">
+						<a class="product-image-link"> <img class="product-image"
+							src="<c:url value='/img/card.jpg'/>" alt="ASUS 그래픽카드">
+						</a>
+
+						<div class="product-info">
+							<div class="product-heading">
+								<a class="product-brand">ASUS &gt;</a> <a class="product-name">[ASUS]
+									PRIME 지포스 RTX 5080 OC D7 16GB 대원씨티에스</a>
+							</div>
+
+							<div class="product-pricing">
+								<span class="product-discount">24%</span> <span
+									class="product-price">1,200,000원</span> <span
+									class="product-original-price">1,500,000원</span>
+							</div>
+						</div>
+					</div>
+					<div class="product-card">
+						<a class="product-image-link"> <img class="product-image"
+							src="<c:url value='/img/card.jpg'/>" alt="ASUS 그래픽카드">
+						</a>
+
+						<div class="product-info">
+							<div class="product-heading">
+								<a class="product-brand">ASUS &gt;</a> <a class="product-name">[ASUS]
+									PRIME 지포스 RTX 5080 OC D7 16GB 대원씨티에스</a>
+							</div>
+
+							<div class="product-pricing">
+								<span class="product-discount">24%</span> <span
+									class="product-price">1,200,000원</span> <span
+									class="product-original-price">1,500,000원</span>
+							</div>
+						</div>
+					</div>
+					<div class="product-card">
+						<a class="product-image-link"> <img class="product-image"
+							src="<c:url value='/img/card.jpg'/>" alt="ASUS 그래픽카드">
+						</a>
+
+						<div class="product-info">
+							<div class="product-heading">
+								<a class="product-brand">ASUS &gt;</a> <a class="product-name">[ASUS]
+									PRIME 지포스 RTX 5080 OC D7 16GB 대원씨티에스</a>
+							</div>
+
+							<div class="product-pricing">
+								<span class="product-discount">24%</span> <span
+									class="product-price">1,200,000원</span> <span
+									class="product-original-price">1,500,000원</span>
+							</div>
+						</div>
+					</div>
+					<div class="product-card">
+						<a class="product-image-link"> <img class="product-image"
+							src="<c:url value='/img/card.jpg'/>" alt="ASUS 그래픽카드">
+						</a>
+
+						<div class="product-info">
+							<div class="product-heading">
+								<a class="product-brand">ASUS &gt;</a> <a class="product-name">[ASUS]
+									PRIME 지포스 RTX 5080 OC D7 16GB 대원씨티에스</a>
+							</div>
+
+							<div class="product-pricing">
+								<span class="product-discount">24%</span> <span
+									class="product-price">1,200,000원</span> <span
+									class="product-original-price">1,500,000원</span>
+							</div>
+						</div>
+					</div>
+					<div class="product-card">
+						<a class="product-image-link"> <img class="product-image"
+							src="<c:url value='/img/card.jpg'/>" alt="ASUS 그래픽카드">
+						</a>
+
+						<div class="product-info">
+							<div class="product-heading">
+								<a class="product-brand">ASUS &gt;</a> <a class="product-name">[ASUS]
+									PRIME 지포스 RTX 5080 OC D7 16GB 대원씨티에스</a>
+							</div>
+
+							<div class="product-pricing">
+								<span class="product-discount">24%</span> <span
+									class="product-price">1,200,000원</span> <span
+									class="product-original-price">1,500,000원</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="brand-links" aria-label="브랜드 목록">
+				<div class="brand-links-inner">
+					<a class="brand-link">
+						<div class="brand-logo">
+							<img src="<c:url value='/img/asus-logo.svg'/>" alt="ASUS">
+						</div>
+					</a>
+					<a class="brand-link">
+						<div class="brand-logo">
+							<img src="<c:url value='/img/asus-logo.svg'/>" alt="ASUS">
+						</div>
+					</a>
+					<a class="brand-link">
+						<div class="brand-logo">
+							<img src="<c:url value='/img/asus-logo.svg'/>" alt="ASUS">
+						</div>
+					</a>
+					<a class="brand-link">
+						<div class="brand-logo">
+							<img src="<c:url value='/img/asus-logo.svg'/>" alt="ASUS">
+						</div>
+					</a>
+					<a class="brand-link">
+						<div class="brand-logo">
+							<img src="<c:url value='/img/asus-logo.svg'/>" alt="ASUS">
+						</div>
+					</a>
+					<a class="brand-link">
+						<div class="brand-logo">
+							<img src="<c:url value='/img/asus-logo.svg'/>" alt="ASUS">
+						</div>
+					</a>
+					<a class="brand-link">
+						<div class="brand-logo">
+							<img src="<c:url value='/img/asus-logo.svg'/>" alt="ASUS">
+						</div>
+					</a>
+					<a class="brand-link">
+						<div class="brand-logo">
+							<img src="<c:url value='/img/asus-logo.svg'/>" alt="ASUS">
+						</div>
+					</a>
+					<a class="brand-link">
+						<div class="brand-logo">
+							<img src="<c:url value='/img/asus-logo.svg'/>" alt="ASUS">
+						</div>
+					</a>
+					<a class="brand-link">
+						<div class="brand-logo">
+							<img src="<c:url value='/img/asus-logo.svg'/>" alt="ASUS">
+						</div>
+					</a>
+					<a class="brand-link">
+						<div class="brand-logo">
+							<img src="<c:url value='/img/asus-logo.svg'/>" alt="ASUS">
+						</div>
+					</a>
+					<a class="brand-link">
+						<div class="brand-logo">
+							<img src="<c:url value='/img/asus-logo.svg'/>" alt="ASUS">
+						</div>
+					</a>
+				</div>
 			</section>
 		</div>
 	</main>
