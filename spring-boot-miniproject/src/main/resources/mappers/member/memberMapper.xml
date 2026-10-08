@@ -31,7 +31,7 @@
 		FROM dual
 	</select>
 	
-	<insert id="saveMember">
+	<insert id="saveMember" useGeneratedKeys="true" keyProperty="memberId" keyColumn="MEMBER_ID">
 		INSERT INTO members(   
 			login_id,
         	password_hash,
@@ -46,8 +46,30 @@
 	 		LOWER(TRIM(#{email})),
 	 		#{phone}
 	 	)
-		
+	</insert>
 	
+	<insert id="saveAddress" >
+		INSERT INTO member_addresses (
+			member_id,
+			address_label,
+			recipient_name,
+			recipient_phone,
+			postal_code,
+			address_line1,
+			address_line2,
+			is_default
+		)
+		VALUES (
+			#{memberId},
+			'기본 배송지',
+			#{memberName},
+			#{phone},
+			#{postalCode},
+			#{addressLine1},
+			#{addressLine2},
+			'Y'
+		)
+
 	</insert>
 
 </mapper>

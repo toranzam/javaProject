@@ -14,5 +14,7 @@ public interface MemberMapper {
 	boolean existByUsername(@Param("loginId")String loginId);
 	
 	void saveMember(MemberJoinDto memberJoinDto);
+	
+	void saveAddress(MemberJoinDto memberJoinDto);
 
 }

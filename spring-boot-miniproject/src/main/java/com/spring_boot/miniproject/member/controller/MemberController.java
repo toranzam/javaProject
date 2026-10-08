@@ -2,6 +2,7 @@ package com.spring_boot.miniproject.member.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -32,7 +33,12 @@ public class MemberController {
 	}
 
 	@PostMapping("/login")
-	public String doLogin(MemberLoginDto memberLoginDto, HttpServletRequest request, HttpSession session, Model model) {
+	public String doLogin(MemberLoginDto memberLoginDto, HttpServletRequest request, HttpSession session, Model model, BindingResult bindingResult) {
+		
+		if(bindingResult.hasErrors()) {
+			model.addAttribute("errorMessage", bindingResult.getAllErrors().get(0).getDefaultMessage());
+			return "member/login";
+		}
 
 		MemberDto loginMember = service.login(memberLoginDto);
 
@@ -51,15 +57,15 @@ public class MemberController {
 	}
 
 	@PostMapping("/join")
-	public String doJoin(MemberJoinDto memberJoinDto, Model model) {
-
-		String password = memberJoinDto.getPassword();
-
-		if (password == null || password.isBlank()) {
-			model.addAttribute("errorMessage", "비밀번호를 입력해주세요.");
+	public String doJoin(MemberJoinDto memberJoinDto, Model model, BindingResult bindingResult) {
+		
+		if(bindingResult.hasErrors()) {
+			model.addAttribute("errorMessage", bindingResult.getAllErrors().get(0).getDefaultMessage());
 			return "member/join";
 		}
 
+		String password = memberJoinDto.getPassword();
+		
 		if (!memberJoinDto.getPassword().equals(memberJoinDto.getPasswordCheck())) {
 			model.addAttribute("errorMessage", "비밀번호와 비밀번호 확인이 일치하지 않습니다.");
 			return "member/join";
