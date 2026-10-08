@@ -39,8 +39,6 @@ public class MemberService {
 	@Transactional
 	public boolean join(MemberJoinDto memberJoinDto) {
 
-		
-
 		boolean usernameExists = memberMapper.existByUsername(memberJoinDto.getLoginId());
 
 		if (usernameExists) {
